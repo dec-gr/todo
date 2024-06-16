@@ -25,8 +25,9 @@ function sleep(ms) {
 // }
 
 const dataStore = appStorage();
+const localStore = localStorage.getItem("dataStore");
 
-if (localStorage.getItem("dataStore").length === null) {
+if (localStore !== null && localStore.length >= 1) {
   dataStore.loadFromStorage(localStorage.getItem("dataStore"));
 }
 
