@@ -3,10 +3,250 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Todo</title>
     <script src="main.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    Hello World!
+    <div class="application-cont" ;>
+      <!-- <div class="application-header">
+        <div class="title"><p>ToDo List</p></div>
+      </div> -->
+      <div class="application-body">
+        <!-- <div class="side-bar">
+          <p>This is the sidebar</p>
+        </div> -->
+        <div class="board-container">
+          <div class="board-header">
+            <div class="profile-pic">
+              <img src="images/user-4.png" alt="user-icon" />
+            </div>
+            <div class="board-title">
+              <h2 class="board-title-text">Task Mastered</h2>
+            </div>
+          </div>
+          <!-- <div class="projects-container">
+            <div class="projects">
+              <div class="project-cont">
+                <div class="project-card">
+                  <p>Title: Clean</p>
+                  <p>Due Date: 22/9/2024</p>
+                  <p>Desc: Wash all the plates in the room</p>
+                </div>
+                <div class="project-card">
+                  <p>Title: Clean</p>
+                  <p>Due Date: 22/9/2024</p>
+                  <p>Desc: Wash all the plates in the room</p>
+                </div>
+                <div class="project-card">
+                  <p>Title: Clean</p>
+                  <p>Due Date: 22/9/2024</p>
+                  <p>Desc: Wash all the plates in the room</p>
+                </div>
+              </div>
+              <div class="project-cont">
+                <div class="project-card">
+                  <p>Title: Clean</p>
+                  <p>Due Date: 22/9/2024</p>
+                  <p>Desc: Wash all the plates in the room</p>
+                </div>
+                <div class="project-card">
+                  <p>Title: Clean</p>
+                  <p>Due Date: 22/9/2024</p>
+                  <p>Desc: Wash all the plates in the room</p>
+                </div>
+                <div class="project-card">
+                  <p>Title: Clean</p>
+                  <p>Due Date: 22/9/2024</p>
+                  <p>Desc: Wash all the plates in the room</p>
+                </div>
+              </div>
+            </div>
+            <div class="button-containers">
+              <button id="addProjectBtn">Add Project</button>
+              <button id="printDataBtn">Print Data</button>
+            </div>
+          </div> -->
+          <div class="projects-container">
+            <div class="projects">
+              <ol id="board">
+                <li class="project-wrapper" data-project-id="p-0">
+                  <div class="button-container">
+                    <button id="addTaskBtn" data-project-id="p-0">
+                      Add Task
+                    </button>
+                  </div>
+                  <button
+                    data-current-project-id="p-0"
+                    class="deleteProjectBtn"
+                  >
+                    Remove</button
+                  ><button data-current-project-id="p-0" class="projectEditBtn">
+                    Edit
+                  </button>
+                  <p class="title">Title Today</p>
+                  <div data-task-id="t-0" class="project-card minimised">
+                    <button>Complete</button><button>Edit</button
+                    ><button data-current-task-id="t-0" class="deleteTaskBtn">
+                      Remove
+                    </button>
+                    <p class="title">Title: Washing</p>
+                    <p class="isComplete">Complete?: true</p>
+                    <div class="task-card-details">
+                      <p class="descr">Desc: Wash the white shirts</p>
+                      <p class="date">Due Date: 7th May</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="project-cont" data-project-id="p-1">
+                  <div class="button-container">
+                    <button id="addTaskBtn" data-project-id="p-1">
+                      Add Task
+                    </button>
+                  </div>
+                  <button
+                    data-current-project-id="p-1"
+                    class="deleteProjectBtn"
+                  >
+                    Remove</button
+                  ><button data-current-project-id="p-1" class="projectEditBtn">
+                    Edit
+                  </button>
+                  <p class="title">Title Tomorrow</p>
+                  <div data-task-id="t-1" class="project-card minimised">
+                    <button>Complete</button><button>Edit</button
+                    ><button data-current-task-id="t-1" class="deleteTaskBtn">
+                      Remove
+                    </button>
+                    <p class="title">Title: Clean</p>
+                    <p class="isComplete">Complete?: false</p>
+                    <div class="task-card-details">
+                      <p class="descr">Desc: Clean the living room</p>
+                      <p class="date">Due Date: 7th May</p>
+                    </div>
+                  </div>
+                  <div data-task-id="t-2" class="project-card minimised">
+                    <button>Complete</button><button>Edit</button
+                    ><button data-current-task-id="t-2" class="deleteTaskBtn">
+                      Remove
+                    </button>
+                    <p class="title">Title: Clean</p>
+                    <p class="isComplete">Complete?: false</p>
+                    <div class="task-card-details">
+                      <p class="descr">Desc: Clean the living room</p>
+                      <p class="date">Due Date: 7th May</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="project-wrapper">
+                  <div class="project-cont addProjectDiv">
+                    <div class="add-task-button-container">
+                      <button id="addProjectBtn" class="fas fa-plus">
+                        Add Project
+                      </button>
+                    </div>
+                  </div>
+                </li>
+                <!-- <div class="button-containers">
+                  <button id="addProjectBtne">Add Project</button> -->
+                <!-- <button id="printDataBtn">Print Data</button> -->
+                <!-- </div> -->
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <dialog id="addProjectDialog">
+        <form>
+          <p>
+            <label>
+              Project name
+              <input type="text" name="project-name" id="project-name" />
+            </label>
+          </p>
+          <div>
+            <button value="cancel" formmethod="dialog">Cancel</button>
+            <button id="confirmBtn" value="default">Confirm</button>
+          </div>
+        </form>
+      </dialog>
+
+      <dialog id="addTaskDialog">
+        <form>
+          <p>
+            <label>
+              Title
+              <input type="text" name="task-title" id="task-title" />
+            </label>
+          </p>
+          <p>
+            <label>
+              Description
+              <input type="text" name="task-desc" id="task-desc" />
+            </label>
+          </p>
+          <p>
+            <label>
+              Due Date
+              <input type="date" name="task-date" id="task-date" />
+            </label>
+          </p>
+          <div>
+            <button value="cancel" formmethod="dialog">Cancel</button>
+            <button id="taskConfirmBtn" value="default">Confirm</button>
+          </div>
+        </form>
+      </dialog>
+
+      <dialog id="editTaskDialog">
+        <form>
+          <p>
+            <label>
+              Title
+              <input type="text" name="task-title" id="edit-task-title" />
+            </label>
+          </p>
+          <p>
+            <label>
+              Description
+              <input type="text" name="task-desc" id="edit-task-desc" />
+            </label>
+          </p>
+          <p>
+            <label>
+              Due Date
+              <input type="date" name="task-date" id="edit-task-date" />
+            </label>
+          </p>
+          <div>
+            <button value="cancel" formmethod="dialog">Cancel</button>
+            <button id="edit-taskConfirmBtn" value="default">Confirm</button>
+          </div>
+        </form>
+      </dialog>
+      <dialog id="editProjectDialog">
+        <form>
+          <p>
+            <label
+              >Title
+              <input
+                type="text"
+                name="edit-project-title"
+                id="edit-project-title"
+              />
+            </label>
+          </p>
+          <div>
+            <button value="cancel" formmethod="dialog">Cancel</button>
+            <button id="edit-projectConfirmBtn" value="default">Confirm</button>
+          </div>
+        </form>
+      </dialog>
+    </div>
   </body>
 </html>
