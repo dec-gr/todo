@@ -1,0 +1,315 @@
+body {
+  background-color: beige;
+  margin: 0;
+}
+
+.application-cont {
+  background-color: rgb(174, 205, 205);
+  background: url("./srcImages/pawel-czerwinski-3-bDL0iRcbI-unsplash.jpg");
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0%;
+}
+
+.application-header {
+  /* border: dashed red 2px; */
+  min-height: 48px;
+  max-height: 48px;
+}
+
+.application-body {
+  /* border: dashed red 2px; */
+  display: flex;
+  flex-grow: 1;
+  overflow-y: hidden;
+}
+
+.side-bar {
+  /* border: dashed red 2px; */
+  height: 100%;
+}
+
+.board-container {
+  /* border: dashed red 2px; */
+  flex: 1;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.board-header {
+  /* border: dashed red 2px; */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.profile-pic > img {
+  width: 3rem;
+}
+
+.board-title {
+  background-color: white;
+  min-width: 15rem;
+  border-radius: 35px;
+  border: solid 1px grey;
+}
+
+.board-title-text {
+  margin-left: 25px;
+}
+
+.board-header > div {
+  margin: 20px 0px 20px 40px;
+}
+
+.projects-container {
+  /* border: dashed red 2px; */
+  flex-grow: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+}
+
+.projects {
+  display: flex;
+}
+
+#board {
+  display: flex;
+  list-style: none;
+  padding: 14px 6px;
+  margin: 0;
+  /* overflow-y: hidden; */
+}
+
+.project-wrapper {
+  padding: 0 6px;
+  /* align-self: flex-start; */
+  flex-shrink: 0;
+  display: block;
+  /* height: 250px; */
+  /* white-space: nowrap; */
+}
+
+/* .project-cont {
+  border: dashed red 2px;
+  padding: 0 6px;
+  align-self: flex-start;
+  flex-shrink: 0;
+  display: block;
+  height: 100%;
+  white-space: nowrap;
+} */
+
+.project-cont {
+  --bg-opacity: 1;
+  background-color: rgba(241, 242, 244, var(--bg-opacity));
+  border-radius: 12px;
+  box-shadow: var(
+    --ds-shadow-raised,
+    0px 1px 1px #091e4240,
+    0px 0px 1px #091e424f
+  );
+  display: flex;
+  /* justify-content: space-between;
+  max-height: 100%; */
+  flex-direction: column;
+  /* flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 272px; */
+  /* align-self: start;
+  padding-bottom: 8px;
+  position: relative;
+  scroll-margin: 8px;
+  white-space: normal; */
+  width: 272px;
+  box-sizing: border-box;
+  vertical-align: top;
+  max-height: 100%;
+  padding: 0px 6px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ds-text, #172b4d);
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  /* border: solid red 1px; */
+  /* width: 100%; */
+  align-items: baseline;
+  padding: 0px 4px;
+}
+
+.title-text {
+  overflow-wrap: anywhere;
+}
+
+.project-btn-container {
+  white-space: nowrap;
+}
+
+.taskList {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  list-style: none;
+  padding: 2px 0px;
+  margin: 0;
+  row-gap: 8px;
+  overflow-y: auto;
+}
+
+.taskCardHeader {
+  display: flex;
+  justify-content: space-between;
+  /* border: solid red 1px; */
+  width: 100%;
+  align-items: baseline;
+}
+
+.title {
+  overflow-wrap: anywhere;
+  font-size: 21px;
+  margin-bottom: 4px;
+}
+
+.taskCardHeader > div {
+  /* border: solid blue 2px; */
+}
+
+.project-card .taskBtnContainer {
+  visibility: hidden;
+}
+
+.taskBtnContainer {
+  white-space: nowrap;
+}
+
+.taskBtnContainer button {
+  background: transparent;
+  border: none;
+}
+
+.taskBtnContainer button:hover {
+  background: rgba(227, 227, 233, 0.729);
+  border-radius: 50%;
+}
+
+.project-card {
+  border: solid transparent 2px;
+  padding: 0px 4px;
+}
+
+.project-card:hover {
+  border-color: blue;
+}
+.project-card:hover .taskBtnContainer {
+  visibility: visible;
+}
+
+/* .project-card {
+  margin: 1rem;
+  width: 272px;
+  border: solid black 2px;
+  background-color: rgba(44, 44, 204, 0.442);
+} */
+
+.project-card {
+  background-color: var(--ds-surface-raised, #ffffff);
+  border-radius: 8px;
+  box-shadow: var(
+    --ds-shadow-raised,
+    0px 1px 1px #091e4240,
+    0px 0px 1px #091e424f
+  );
+  /* color: var(--ds-text, #172b4d); */
+  cursor: pointer;
+  min-height: 36px;
+  position: relative;
+  scroll-margin: 8px;
+}
+
+.minimised .title {
+  margin-bottom: revert;
+}
+
+.minimised > .task-card-details {
+  display: none;
+}
+
+.button-container {
+  /* border: dashed red 2px; */
+  padding: 0 6px;
+  align-self: flex-start;
+  flex-shrink: 0;
+  display: block;
+  flex-grow: 1;
+  height: 100%;
+  margin-top: 0px;
+}
+
+#addProjectBtn {
+  width: 272px;
+}
+
+.add-task-button-container {
+  margin: 5px 0px;
+  padding: 4px 0px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.add-task-button-container button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.add-task-button-container button:hover {
+  background: rgba(227, 227, 233, 0.729);
+}
+
+.addProjectDiv {
+  --bg-opacity: 0.5;
+}
+
+.task-card-section-header {
+  margin-bottom: 0px;
+}
+
+.task-card-section-text {
+  background-color: #a7a5a52e;
+  border: #0000000d solid 0.005px;
+  border-radius: 1px;
+  padding: 3px;
+  margin-top: 0px;
+  color: #172b4e;
+}
+
+.complete {
+  background-color: rgba(98, 199, 98, 0.619);
+}
+
+.green {
+  color: green;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.green-border {
+  border-color: green;
+}
